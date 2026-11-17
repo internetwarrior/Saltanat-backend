@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: .
+    container_name: saltanat-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./media:/app/media
+    environment:
+      - DEBUG=1
+    restart: unless-stopped
